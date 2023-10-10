@@ -6,9 +6,6 @@
     <li>A duration time that indicates the number of hours and minutes</li>
     <li>Substraction</li>
     <li>(optional) a starting day of the week, case insensitive</li>
-    <li>Division</li>
-    <li>Result</li>
-    <li>Reset result</li>
 </ul>
 
 
