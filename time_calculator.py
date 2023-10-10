@@ -49,9 +49,11 @@ def add_time(startTime, durationTime, startingDay=''):
             formatedHour = int(startTime[:x].replace('PM', '')) + int(hours) + int(durationTime[:y])
             if formatedHour > 24:
                 days = formatedHour / 24
-                formatedHour = formatedHour % 24
+                formatHour = formatedHour % 24
+                if formatHour > 12:
+                    formatHour = formatedHoursFunction(formatHour)
                 nr = nr + 1
-            if formatedHour == 12:
+            elif formatedHour == 12:
                 formatHour = 12
             else:
                 formatHour = formatedHoursFunction(formatedHour)
@@ -62,6 +64,11 @@ def add_time(startTime, durationTime, startingDay=''):
             elif nr == 1:
                 if startingDay == "tueSday":
                     result = str(formatHour) + ":" + minutes + " AM, " + "Thursday (" + str(round(days)) + " days later)"
+                else:
+                    if round(days) != 1:
+                        result = str(formatHour) + ":" + str(minutes) + " AM " + "(" + str(round(days)) + " days later)"
+                    else:
+                        result = str(formatHour) + ":" + str(minutes) + " AM (next day)"
             else:
                 if formatedHoursFunction(formatedHour):
                     result = str(formatHour) + ":" + str(minutes) + " PM (next day)"
@@ -81,11 +88,12 @@ def add_time(startTime, durationTime, startingDay=''):
                 formatHour = 12
             else:
                 formatHour = formatedHoursFunction(formatedHour)
-                
+
             if int(minutes) < 10:
                 minutes = str(minutes).zfill(2)
             if startingDay and nr == 0:
                 result = str(formatHour) + ":" + str(minutes) + " PM, " + str(startingDay)
+
             elif nr == 1:
                 if startingDay == "tueSday":
                     result = str(formatHour) + ":" + str(minutes) + " AM, " + "thursday"
