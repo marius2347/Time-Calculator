@@ -4,6 +4,7 @@
 <ul>
     <li> A start time in the 12-hour clock format (ending in AM or PM)</li>
     <li>A duration time that indicates the number of hours and minutes</li>
+    <li>Returns exact time and days count</li>
 </ul>
 
 
