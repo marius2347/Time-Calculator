@@ -4,7 +4,6 @@
 <ul>
     <li> A start time in the 12-hour clock format (ending in AM or PM)</li>
     <li>A duration time that indicates the number of hours and minutes</li>
-    <li>(optional) a starting day of the week, case insensitive</li>
 </ul>
 
 
