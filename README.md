@@ -1,4 +1,4 @@
-<h1>Time Calculator - Python Project</h1>
+<h1>Time Calculator in Python</h1>
 <br>
 <h2>Features</h2>
 <ul>
